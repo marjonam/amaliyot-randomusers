@@ -26,7 +26,7 @@ const getData = (resource) => {
         resolve(data.results);
         loaderToggle(false);
       } else if (request.request == 4) {
-        reject("error");
+        reject("error!!!");
         loaderToggle(false);
       }
     });
@@ -40,7 +40,7 @@ const getData = (resource) => {
 const reload = () => {
   getData(API)
     .then((data) => {
-      console.log(data);
+      updataUI(data);
     })
     .catch((err) => {
       console.log(err);
